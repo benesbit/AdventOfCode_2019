@@ -103,7 +103,16 @@ fuel_requirements = [90014,
 
 sum_of_requirements = 0
 
-for fuel_req in fuel_requirements:
-    sum_of_requirements += (math.floor(fuel_req / 3) - 2)
+def fuel_calculation(mass):
+    return (math.floor(mass / 3) - 2)
+
+def find_fuel_for_fuel(mass):
+    if fuel_calculation(mass) <= 0:
+        return 0
+    else:
+        return fuel_calculation(mass) + find_fuel_for_fuel(fuel_calculation(mass))
+
+for mass in fuel_requirements:
+    sum_of_requirements += find_fuel_for_fuel(mass)
     
 print(sum_of_requirements)    
