@@ -18,8 +18,12 @@ def run_intcode(i_code):
 
         if (opt_code == 1):
             print("Opt code is: " + str(opt_code))
+            sum = i_code[i_code[(position + 1)]] + i_code[i_code[(position + 2)]]
+            i_code[i_code[position + 3]] = sum
         elif (opt_code == 2):
             print("Opt code is: " + str(opt_code))
+            product = i_code[i_code[(position + 1)]] * i_code[i_code[(position + 2)]]
+            i_code[i_code[position + 3]] = product
         
         position += 4
         
