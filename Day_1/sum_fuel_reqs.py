@@ -1,4 +1,4 @@
-
+import math
 
 fuel_requirements = [90014,
                     136811,
@@ -100,3 +100,10 @@ fuel_requirements = [90014,
                     74991,
                     53223,
                     147635]
+
+sum_of_requirements = 0
+
+for fuel_req in fuel_requirements:
+    sum_of_requirements += (math.floor(fuel_req / 3) - 2)
+    
+print(sum_of_requirements)    
