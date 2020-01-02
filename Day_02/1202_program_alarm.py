@@ -14,7 +14,16 @@ def run_intcode(i_code):
     position = 0
 
     while continue_program(i_code[position]):
-        print(i_code)
+        opt_code = i_code[position]
+
+        if (opt_code == 1):
+            print("Opt code is: " + str(opt_code))
+        elif (opt_code == 2):
+            print("Opt code is: " + str(opt_code))
+        
+        position += 4
+        
+    print(i_code)
 
 Intcode = [1,9,10,3,2,3,11,0,99,30,40,50]
 
